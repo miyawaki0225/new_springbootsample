@@ -12,3 +12,8 @@ https://learning-collection.com/spring-boot%E3%81%A7%E3%82%88%E3%81%8F%E4%BD%BF%
 
 - PRGパターンとは
 https://zenn.dev/imah/articles/3d186a6462ecc8
+
+- BindingResult バインドエラーやバリデーションエラーを確認
+- th:errorclass 同じタグでth:field使用していると有効
+- th:errors フィールド名指定して、エラーメッセージ表示
+- th:if 条件分
