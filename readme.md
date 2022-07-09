@@ -9,3 +9,6 @@
 
 - よく使うアノテーション  
 https://learning-collection.com/spring-boot%E3%81%A7%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86%E3%82%A2%E3%83%8E%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E4%B8%80%E8%A6%A7/
+
+- PRGパターンとは
+https://zenn.dev/imah/articles/3d186a6462ecc8
