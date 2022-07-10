@@ -44,12 +44,12 @@ public class UserServiceImpl implements UserService{
 			String userName) {
 		mapper.updateOne(userId, password, userName);
         // 例外を発生させる。
-        int i= 1/0;
+        // int i= 1/0;
 	}
 
     /* ユーザー削除（１件）*/
     @Override
     public void deleteUserOne(String userId){
-        int count = mapper.deleteOne(userId);
+        mapper.deleteOne(userId);
     }
 }

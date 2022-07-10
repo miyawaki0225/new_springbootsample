@@ -5,10 +5,13 @@ import java.util.Map;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -60,4 +63,21 @@ public class SignupController {
         userService.signup(user);
         return "redirect:/login";
     }
+
+    /**データベース関連の例外処理*/
+	@ExceptionHandler(DataAccessException.class) 
+	public String dataAccessExceptionHandler(DataAccessException e, Model model) {
+		
+		//空文字をセット
+		model.addAttribute("error", "");
+		
+		//メッセージをModelに登録
+		model.addAttribute("message", "An exception occured in SignupController");
+		
+		//register HTTP error code(500) in Model
+		model.addAttribute("status", HttpStatus.INTERNAL_SERVER_ERROR);
+		
+		return "error";
+		
+	}
 }
