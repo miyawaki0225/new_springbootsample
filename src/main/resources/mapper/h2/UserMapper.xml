@@ -4,7 +4,7 @@
 <!-- Mapperクラスとxmlのマッピング（パッケージ名も含める、アプリケーション名に注意！）-->
 <mapper namespace="com.example.springbootsample.repository.UserMapper">
     <!-- mapping definition for user detail -->
-    <resultMap type="com.example.springbootsample.domain.user.model.MUser" id="userMap">
+    <resultMap type="com.example.springbootsample.domain.user.model.MUser" id="userMapperMap">
         <id column="user_id" property="userId"/>
         <result column="password" property="password"/>
         <result column="user_name" property="userName"/>
@@ -17,7 +17,7 @@
         <collection property="salaryList" resultMap="salary" columnPrefix="salary_"/>
     </resultMap>  
     <!-- user registration -->
-    <insert id="insertOne" resultMap="userMap">
+    <insert id="insertOne">
         insert into m_user(
             user_id,
             password,

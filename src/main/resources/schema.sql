@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS m_user(
     user_name VARCHAR(50),
     birthday DATE,
     age INT,
-    gendar INT,
+    gender INT,
     department_id INT,
     role VARCHAR(50)
 );
