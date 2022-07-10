@@ -8,3 +8,6 @@ https://qiita.com/TakahiRoyte/items/949f4e88caecb02119aa#:~:text=REST%E3%81%A8%E
   
 
 @RestController
+
+- ajax通信
+非同期通信
