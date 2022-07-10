@@ -24,4 +24,7 @@ public interface UserMapper {
     /*@Param　複数のパラメータを使用する場合、メソッドの引数に@Paramアノテーションをつける */
     /* ユーザー削除（１件） */
     public int deleteOne(@Param("userId") String userId);
+
+    /** ログインユーザー取得 */
+    public MUser findLoginUser(String userId);
 }

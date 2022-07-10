@@ -10,16 +10,9 @@ INSERT INTO m_user (
 	,gender
 	,department_id
 	,role
-) VALUES (
-    'system@co.jp',
-    'password',
-    'システム管理者',
-    '2000-01-01',
-    21,
-    1,
-    1,
-    'ROLE_ADMIN'),
-    ('user@co.jp','password','ユーザー1','2000-01-01',21,2,2,'ROLE_GENERAL');
+) VALUES ('system@co.jp','$2a$10$QzqpwALl883Jl9DERE8UdOGfI9uCl/CmamEsZc15uQFIzMQquHgUa','システム管理者','2000-01-01',21,1,1,'ROLE_ADMIN')
+,('user@co.jp','$2a$10$/sdmL26IltXAnQ7WkvAmheD15/1BZ4YYnvu6dtDvIeO07CNkYp8y2','ユーザー１','2000-01-01',21,2,2,'ROLE_GENERAL')
+;
 
 /* 部署 */
 INSERT INTO m_department(department_id,department_name)

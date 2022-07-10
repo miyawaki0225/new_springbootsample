@@ -104,5 +104,10 @@
     <!--ユーザー1件削除-->
 	<delete id="deleteOne">
 		delete from	m_user where user_id = #{userId}
-	</delete>		
+	</delete>
+
+    <!--ログいにゅーざー情報取得-->		
+    <select if="findLoginUser" resultType="MUser">
+        select * from m_user where user_id = #{userId}
+    </select>
 </mapper>
