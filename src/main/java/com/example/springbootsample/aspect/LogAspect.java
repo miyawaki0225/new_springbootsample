@@ -35,7 +35,7 @@ public class LogAspect {
 	
 	
 	/**
-	 * Log output before and after the controller is executed
+	 * コントローラーの実行前後にログ出力する
 	 * */
 	//@Around("bean(*Controller)")
 	//@Around("@annotation(org.springframework.web.bind.annotation.GetMapping)")
@@ -43,23 +43,16 @@ public class LogAspect {
 	public Object startLog(ProceedingJoinPoint jp) throws Throwable {
 		
 		//output start log
-		log.info("Method start: " + jp.getSignature());
+		log.info("メソッド開始: " + jp.getSignature());
 		
 
 		try {
-			//method execution
-			Object result = jp.proceed();
-			
-			//output end log
-			log.info("Method end: " + jp.getSignature());
-
-			//return the execution result to the caller
+            Object result = jp.proceed();
+			log.info("メソッド終了: " + jp.getSignature());
 			return result;
-			
 		}catch (Exception e) {
 			// output error log
-			log.error("Method abend: " + jp.getSignature());
-			
+			log.error("メソッド異常終了: " + jp.getSignature());
 			//rethrow error
 			throw e;
 		}
