@@ -36,8 +36,7 @@ public class UserServiceImpl2 implements UserService { //-> JPA
 		//存在✓
 		boolean exists = repository.existsById(user.getUserId());
 		if(exists) {
-			throw new DataAccessException("ユーザーが既に存在") {
-				private static final long serialVersionUID = 1L;};
+			throw new DataAccessException("ユーザーが既に存在") {};
 		}
 
 		user.setDepartmentId(1);
@@ -81,11 +80,7 @@ public class UserServiceImpl2 implements UserService { //-> JPA
 		String encryptPassword = encoder.encode(password);
 
         //ユーザー更新
-		repository.updateUser(userId, encryptPassword, userName);
-		
-		//Raise an exception
-		//int i = 1 / 0;
-		
+		repository.updateUser(userId, encryptPassword, userName);	
 	}
 	
 	/**ユーザー削除（１件）*/
